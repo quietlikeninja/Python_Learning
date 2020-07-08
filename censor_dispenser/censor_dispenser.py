@@ -6,15 +6,13 @@ email_four = open("email_four.txt", "r").read()
 
 def censor_text(text,censor):
     #TODO #1 Add suppport for captialised words in supplied text
-    censored_mask = ""
+    censored_text = ""
     for i in range(len(censor)):
         if censor[i] == " ":
-            censored_mask = censored_mask + " "
+            censored_text = censored_text + " "
         else:
-            censored_mask = censored_mask + "X"
-    censored_text = text.replace(censor,censored_mask)
-    censored_text = censored_text.replace(censor.capitalize(),censored_mask)
-    return censored_text
+            censored_text = censored_text + "X"
+    return text.replace(censor,censored_text)
 
 def censor_list_of_text(text,censor):
     for entry in censor:
