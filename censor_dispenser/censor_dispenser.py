@@ -5,13 +5,16 @@ email_three = open("email_three.txt", "r").read()
 email_four = open("email_four.txt", "r").read()
 
 def censor_text(text,censor):
-    censored_text = ""
+    #TODO #1 Add suppport for captialised words in supplied text
+    censored_mask = ""
     for i in range(len(censor)):
         if censor[i] == " ":
-            censored_text = censored_text + " "
+            censored_mask = censored_mask + " "
         else:
-            censored_text = censored_text + "X"
-    return text.replace(censor,censored_text)
+            censored_mask = censored_mask + "X"
+    censored_text = text.replace(censor,censored_mask)
+    censored_text = censored_text.replace(censor.capitalize(),censored_mask)
+    return censored_text
 
 def censor_list_of_text(text,censor):
     for entry in censor:
@@ -37,5 +40,5 @@ proprietary_terms = ["she", "personality matrix", "sense of self", "self-preserv
 negative_words = ["concerned", "behind", "danger", "dangerous", "alarming", "alarmed", "out of control", "help", "unhappy", "bad", "upset", "awful", "broken", "damage", "damaging", "dismal", "distressed", "distressed", "concerning", "horrible", "horribly", "questionable"]
 
 #print(censor_text(email_one,term))
-print(censor_list_of_text(email_two,proprietary_terms))
+#print(censor_list_of_text(email_two,proprietary_terms))
 #print(censor_three("I am concerned that this project is horrible, awful, and broken.",proprietary_terms,negative_words))
