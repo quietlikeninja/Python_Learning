@@ -39,5 +39,5 @@ proprietary_terms = ["she", "personality matrix", "sense of self", "self-preserv
 negative_words = ["concerned", "behind", "danger", "dangerous", "alarming", "alarmed", "out of control", "help", "unhappy", "bad", "upset", "awful", "broken", "damage", "damaging", "dismal", "distressed", "distressed", "concerning", "horrible", "horribly", "questionable"]
 
 #print(censor_text(email_one,term))
-print(censor_list_of_text(email_two,proprietary_terms))
+#print(censor_list_of_text(email_two,proprietary_terms))
 #print(censor_three("I am concerned that this project is horrible, awful, and broken.",proprietary_terms,negative_words))
