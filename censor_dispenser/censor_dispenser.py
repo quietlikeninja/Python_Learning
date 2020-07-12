@@ -36,9 +36,7 @@ def censor_negative(text,censor,negative):
         puntuation_flag = False
         for neg_word in negative:
             if split_text[i] == neg_word and neg_count >= 2:
-                #print(neg_word + ": " + split_text[i])
                 censored_text = create_mask(split_text[i])
-                #print(censored_text)
                 neg_count += 1
             elif split_text[i] == neg_word:
                 censored_text = split_text[i]
@@ -56,12 +54,18 @@ def censor_negative(text,censor,negative):
                 new_text = new_text + " " + split_text[i]
     return censor_list_of_text(new_text,censor)
 
+
 puctuation = [",","."]
 term = "learning algorithms"
 proprietary_terms = ["she", "personality matrix", "sense of self", "self-preservation", "learning algorithm", "her", "herself"]
 negative_words = ["concerned", "behind", "danger", "dangerous", "alarming", "alarmed", "out of control", "help", "unhappy", "bad", "upset", "awful", "broken", "damage", "damaging", "dismal", "distressed", "distressing", "concerning", "horrible", "horribly", "questionable"]
 test_phrase = "I am concerned that this project is horrible, awful, and broken."
 
+# Requirement 2
 #print(censor_text(email_one,term))
+
+# Requirement 3
 #print(censor_list_of_text(email_two,proprietary_terms))
-print(censor_negative(email_three,proprietary_terms,negative_words))
+
+# Requirement 4
+#print(censor_negative(email_three,proprietary_terms,negative_words))
